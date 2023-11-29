@@ -3,7 +3,7 @@
 //  amiibonintendoproject
 //
 //  Created by Dušky Papulák on 29/11/2023.
-//
+//  Pristup k obrazkom
 
 import Foundation
 final class ImageAccess {
