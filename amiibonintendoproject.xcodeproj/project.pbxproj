@@ -17,7 +17,6 @@
 		5B9499C52B175A62008031F2 /* amiibonintendoprojectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9499C42B175A62008031F2 /* amiibonintendoprojectUITestsLaunchTests.swift */; };
 		5B9499D62B175ABD008031F2 /* ImageAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9499D52B175ABD008031F2 /* ImageAccess.swift */; };
 		5B9499D82B175AD7008031F2 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9499D72B175AD7008031F2 /* NetworkError.swift */; };
-		5B9499DA2B175AE9008031F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9499D92B175AE9008031F2 /* ContentView.swift */; };
 		5B9499DC2B175AFA008031F2 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9499DB2B175AFA008031F2 /* Detail.swift */; };
 		5B9499DE2B175B04008031F2 /* Amiibo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9499DD2B175B04008031F2 /* Amiibo.swift */; };
 		5B9499E02B175B10008031F2 /* AmiiboPar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9499DF2B175B10008031F2 /* AmiiboPar.swift */; };
@@ -61,7 +60,6 @@
 		5B9499C42B175A62008031F2 /* amiibonintendoprojectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = amiibonintendoprojectUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5B9499D52B175ABD008031F2 /* ImageAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAccess.swift; sourceTree = "<group>"; };
 		5B9499D72B175AD7008031F2 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		5B9499D92B175AE9008031F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5B9499DB2B175AFA008031F2 /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 		5B9499DD2B175B04008031F2 /* Amiibo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amiibo.swift; sourceTree = "<group>"; };
 		5B9499DF2B175B10008031F2 /* AmiiboPar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmiiboPar.swift; sourceTree = "<group>"; };
@@ -166,7 +164,6 @@
 		5B9499D22B175A8B008031F2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5B9499D92B175AE9008031F2 /* ContentView.swift */,
 				5B9499DB2B175AFA008031F2 /* Detail.swift */,
 				5B9499E92B1764E4008031F2 /* AmiiboPage.swift */,
 				5B9499EB2B17652D008031F2 /* AmiiboPageRow.swift */,
@@ -330,7 +327,6 @@
 				5B9499DC2B175AFA008031F2 /* Detail.swift in Sources */,
 				5B9499D62B175ABD008031F2 /* ImageAccess.swift in Sources */,
 				5B9499E62B1761F4008031F2 /* APIResponse.swift in Sources */,
-				5B9499DA2B175AE9008031F2 /* ContentView.swift in Sources */,
 				5B9499A22B175A5F008031F2 /* AppDelegate.swift in Sources */,
 				5B9499A42B175A5F008031F2 /* SceneDelegate.swift in Sources */,
 				5B9499E22B175B23008031F2 /* ViewModelAmiibo.swift in Sources */,

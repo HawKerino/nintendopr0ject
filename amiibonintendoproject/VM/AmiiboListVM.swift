@@ -28,7 +28,6 @@ final class AmiiboListVM: ObservableObject {
             }
         }
     }
-    
 }
 
 extension AmiiboListVM {
