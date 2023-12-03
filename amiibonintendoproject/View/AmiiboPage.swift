@@ -11,14 +11,14 @@ import SwiftUI
 struct SearchBarView: View {
     @Binding var searchText: String
     var onSearchAction: () -> Void
-
+    
     var body: some View {
         HStack {
             ZStack(alignment: .leading) {
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(.gray)
                     .padding(.leading, 10)
-
+                
                 TextField("Search", text: $searchText, onCommit: {
                     onSearchAction()
                 })
@@ -28,7 +28,7 @@ struct SearchBarView: View {
                 .padding(.leading, 40)
             }
             .padding(.trailing, 8)
-
+            
             Button(action: {
                 searchText=""
                 onSearchAction()
@@ -52,36 +52,46 @@ struct AmiiboPage: View {
 
     var body: some View {
         NavigationView {
-            VStack {
-                SearchBarView(searchText: $searchText) {
-                    self.amiiboListVM.fetchAmiibo()
-                    self.amiiboListVM.saveSearchText(self.searchText)
-                }
-
-                List {
-                    ForEach(self.filteredAmiibos(), id: \.id) { amiiboview in
-                        AmiiboPageRow(amiiboview: amiiboview)
+            ZStack{
+                
+                Image("wallpaper")
+                    .resizable()
+                    .scaledToFill()
+                    .edgesIgnoringSafeArea(.all)
+                
+                VStack {
+                    SearchBarView(searchText: $searchText) {
+                        self.amiiboListVM.fetchAmiibo()
+                        self.amiiboListVM.saveSearchText(self.searchText)
                     }
-                }
-                .alert(isPresented: self.$amiiboListVM.showAlert) {
-                    self.amiiboListVM.alert
-                }
-                .navigationBarTitle("AmiiboPage", displayMode: .inline)
-                .navigationBarItems(leading:
-                    Button(action: {
+                    
+                    List {
+                        ForEach(self.filteredAmiibos(), id: \.id) { amiiboview in
+                            AmiiboPageRow(amiiboview: amiiboview).listRowBackground(Color.black.opacity(0.5))
+                        }
+                    }.scrollContentBackground(.hidden)
+                    .background(Color.clear)
+                    .alert(isPresented: self.$amiiboListVM.showAlert) {
+                        self.amiiboListVM.alert
+                    }
+                    .navigationBarTitle("AmiiboPage", displayMode: .inline).foregroundColor(Color.white)
+                    .navigationBarItems(leading:
+                                            Button(action: {
                         self.amiiboListVM.fetchAmiibo()
                     }) {
                         Image(systemName: "arrow.clockwise.icloud")
                     },
-                    trailing:
-                    HStack {
+                                        trailing:
+                                            HStack {
                         NavigationLink(destination: PreviousSearchesView(amiiboListVM: amiiboListVM)) {
                             Image(systemName: "clock")
                         }
                     }
-                )
+                    )
+                }
+                .padding()
+                
             }
-            .padding()
         }
     }
 

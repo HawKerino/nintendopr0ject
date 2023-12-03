@@ -11,7 +11,6 @@ struct Detail: View {
     
     init(amiiboview: ViewModelAmiibo) {
         self.amiiboview = amiiboview
-        self.amiiboview.loadImage()
     }
     
     var body: some View {
