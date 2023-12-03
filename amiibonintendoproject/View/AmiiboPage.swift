@@ -41,13 +41,13 @@ struct SearchBarView: View {
     }
 }
 
-
 struct AmiiboPage: View {
     @ObservedObject var amiiboListVM = AmiiboListVM()
     @State private var searchText = ""
 
     init() {
         self.amiiboListVM.fetchAmiibo()
+        self.searchText = self.amiiboListVM.loadSearchText()
     }
 
     var body: some View {
@@ -55,6 +55,7 @@ struct AmiiboPage: View {
             VStack {
                 SearchBarView(searchText: $searchText) {
                     self.amiiboListVM.fetchAmiibo()
+                    self.amiiboListVM.saveSearchText(self.searchText)
                 }
 
                 List {
@@ -71,6 +72,12 @@ struct AmiiboPage: View {
                         self.amiiboListVM.fetchAmiibo()
                     }) {
                         Image(systemName: "arrow.clockwise.icloud")
+                    },
+                    trailing:
+                    HStack {
+                        NavigationLink(destination: PreviousSearchesView(amiiboListVM: amiiboListVM)) {
+                            Image(systemName: "clock")
+                        }
                     }
                 )
             }
