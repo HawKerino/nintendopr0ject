@@ -8,11 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		5B5EC9A22B1C97DD0073A9D8 /* PreviousSearchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5EC9A12B1C97DD0073A9D8 /* PreviousSearchesView.swift */; };
+		5B5EC9A62B1CABBE0073A9D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B5EC9A52B1CABBE0073A9D8 /* Main.storyboard */; };
 		5B9499A22B175A5F008031F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9499A12B175A5F008031F2 /* AppDelegate.swift */; };
 		5B9499A42B175A5F008031F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9499A32B175A5F008031F2 /* SceneDelegate.swift */; };
-		5B9499A92B175A5F008031F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B9499A72B175A5F008031F2 /* Main.storyboard */; };
 		5B9499AB2B175A61008031F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B9499AA2B175A61008031F2 /* Assets.xcassets */; };
-		5B9499AE2B175A61008031F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B9499AC2B175A61008031F2 /* LaunchScreen.storyboard */; };
 		5B9499B92B175A62008031F2 /* amiibonintendoprojectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9499B82B175A62008031F2 /* amiibonintendoprojectTests.swift */; };
 		5B9499C32B175A62008031F2 /* amiibonintendoprojectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9499C22B175A62008031F2 /* amiibonintendoprojectUITests.swift */; };
 		5B9499C52B175A62008031F2 /* amiibonintendoprojectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9499C42B175A62008031F2 /* amiibonintendoprojectUITestsLaunchTests.swift */; };
@@ -48,12 +47,11 @@
 
 /* Begin PBXFileReference section */
 		5B5EC9A12B1C97DD0073A9D8 /* PreviousSearchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousSearchesView.swift; sourceTree = "<group>"; };
+		5B5EC9A52B1CABBE0073A9D8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5B94999E2B175A5F008031F2 /* amiibonintendoproject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = amiibonintendoproject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B9499A12B175A5F008031F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B9499A32B175A5F008031F2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5B9499A82B175A5F008031F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B9499AA2B175A61008031F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5B9499AD2B175A61008031F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B9499AF2B175A61008031F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B9499B42B175A62008031F2 /* amiibonintendoprojectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = amiibonintendoprojectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B9499B82B175A62008031F2 /* amiibonintendoprojectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = amiibonintendoprojectTests.swift; sourceTree = "<group>"; };
@@ -127,9 +125,8 @@
 				5B9499D12B175A85008031F2 /* Access */,
 				5B9499A12B175A5F008031F2 /* AppDelegate.swift */,
 				5B9499A32B175A5F008031F2 /* SceneDelegate.swift */,
-				5B9499A72B175A5F008031F2 /* Main.storyboard */,
 				5B9499AA2B175A61008031F2 /* Assets.xcassets */,
-				5B9499AC2B175A61008031F2 /* LaunchScreen.storyboard */,
+				5B5EC9A52B1CABBE0073A9D8 /* Main.storyboard */,
 				5B9499AF2B175A61008031F2 /* Info.plist */,
 			);
 			path = amiibonintendoproject;
@@ -296,9 +293,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B9499AE2B175A61008031F2 /* LaunchScreen.storyboard in Resources */,
 				5B9499AB2B175A61008031F2 /* Assets.xcassets in Resources */,
-				5B9499A92B175A5F008031F2 /* Main.storyboard in Resources */,
+				5B5EC9A62B1CABBE0073A9D8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,25 +367,6 @@
 			targetProxy = 5B9499BF2B175A62008031F2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		5B9499A72B175A5F008031F2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5B9499A82B175A5F008031F2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		5B9499AC2B175A61008031F2 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5B9499AD2B175A61008031F2 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		5B9499C62B175A62008031F2 /* Debug */ = {
@@ -517,7 +494,6 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = amiibonintendoproject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -545,7 +521,6 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = amiibonintendoproject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

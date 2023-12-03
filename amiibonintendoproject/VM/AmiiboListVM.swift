@@ -40,7 +40,7 @@ final class AmiiboListVM: ObservableObject {
         UserDefaults.standard.set(searchText, forKey: "SearchText")
         if !searchText.isEmpty {
             previousSearches.insert(searchText, at: 0)
-            // Uložení historie vyhledávání
+            
             UserDefaults.standard.set(previousSearches, forKey: "PreviousSearches")
         }
     }
