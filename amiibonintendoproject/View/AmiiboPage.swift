@@ -8,6 +8,40 @@
 import Foundation
 import SwiftUI
 
+struct SearchBarView: View {
+    @Binding var searchText: String
+    var onSearchAction: () -> Void
+
+    var body: some View {
+        HStack {
+            ZStack(alignment: .leading) {
+                Image(systemName: "magnifyingglass")
+                    .foregroundColor(.gray)
+                    .padding(.leading, 10)
+
+                TextField("Search", text: $searchText, onCommit: {
+                    onSearchAction()
+                })
+                .padding(10)
+                .background(Color(.systemGray6))
+                .cornerRadius(8)
+                .padding(.leading, 40)
+            }
+            .padding(.trailing, 8)
+
+            Button(action: {
+                searchText=""
+                onSearchAction()
+            }) {
+                Text("Cancel")
+                    .foregroundColor(.blue)
+                    .padding(.trailing, 10)
+            }
+        }
+    }
+}
+
+
 struct AmiiboPage: View {
     @ObservedObject var amiiboListVM = AmiiboListVM()
     @State private var searchText = ""
@@ -17,40 +51,41 @@ struct AmiiboPage: View {
     }
 
     var body: some View {
-            NavigationView {
-                VStack {
-                    TextField("Search", text: $searchText)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding()
-
-                    List {
-                        ForEach(self.filteredAmiibos(), id: \.id) { amiiboview in
-                            AmiiboPageRow(amiiboview: amiiboview)
-                        }
-                    }
-                    .alert(isPresented: self.$amiiboListVM.showAlert) {
-                        self.amiiboListVM.alert
-                    }
-                    .navigationBarTitle("AmiiboPage", displayMode: .inline)
-                    .navigationBarItems(leading:
-                        Button(action: {
-                            self.amiiboListVM.fetchAmiibo()
-                        }) {
-                            Image(systemName: "arrow.clockwise.icloud")
-                        }
-                    )
+        NavigationView {
+            VStack {
+                SearchBarView(searchText: $searchText) {
+                    self.amiiboListVM.fetchAmiibo()
                 }
+
+                List {
+                    ForEach(self.filteredAmiibos(), id: \.id) { amiiboview in
+                        AmiiboPageRow(amiiboview: amiiboview)
+                    }
+                }
+                .alert(isPresented: self.$amiiboListVM.showAlert) {
+                    self.amiiboListVM.alert
+                }
+                .navigationBarTitle("AmiiboPage", displayMode: .inline)
+                .navigationBarItems(leading:
+                    Button(action: {
+                        self.amiiboListVM.fetchAmiibo()
+                    }) {
+                        Image(systemName: "arrow.clockwise.icloud")
+                    }
+                )
             }
+            .padding()
         }
+    }
 
-        private func filteredAmiibos() -> [ViewModelAmiibo] {
-            if searchText.isEmpty {
-                return amiiboListVM.amiibos
-            } else {
-                return amiiboListVM.amiibos.filter {
-                    $0.character.lowercased().contains(searchText.lowercased()) ||
+    private func filteredAmiibos() -> [ViewModelAmiibo] {
+        if searchText.isEmpty {
+            return amiiboListVM.amiibos
+        } else {
+            return amiiboListVM.amiibos.filter {
+                $0.character.lowercased().contains(searchText.lowercased()) ||
                     $0.game.lowercased().contains(searchText.lowercased())
-                }
             }
         }
     }
+}
