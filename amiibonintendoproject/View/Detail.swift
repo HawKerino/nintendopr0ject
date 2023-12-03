@@ -21,7 +21,7 @@ struct Detail: View {
             HStack {
                 VStack {
                     Image(systemName: "gamecontroller")
-                        .padding(.bottom, 30)
+                        .padding(.bottom, 12)
                     Image(systemName: "info.circle")
                 }
                 .onAppear {
@@ -30,14 +30,14 @@ struct Detail: View {
                 
                 VStack(alignment: .leading) {
                     Text(self.amiiboview.game)
-                        .padding(.bottom, 30)
+                        .padding(.bottom, 5)
                     Text(self.amiiboview.series)
                 }
                 .padding(.leading)
             }
             .foregroundColor(Color.gray)
             .font(.largeTitle)
-            .offset(y: -60)
+            .offset(y: -25)
             
             HStack(alignment: .bottom) {
                 self.amiiboview.image
