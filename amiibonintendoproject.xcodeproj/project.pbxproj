@@ -26,6 +26,7 @@
 		5B9499E82B176249008031F2 /* AmiiboListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9499E72B176249008031F2 /* AmiiboListVM.swift */; };
 		5B9499EA2B1764E5008031F2 /* AmiiboPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9499E92B1764E4008031F2 /* AmiiboPage.swift */; };
 		5B9499EC2B17652D008031F2 /* AmiiboPageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9499EB2B17652D008031F2 /* AmiiboPageRow.swift */; };
+		5BE959F92B21F2BC002DFC1A /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = 5BE959F82B21F2BC002DFC1A /* SwiftUIX */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BE959F92B21F2BC002DFC1A /* SwiftUIX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +207,9 @@
 			dependencies = (
 			);
 			name = amiibonintendoproject;
+			packageProductDependencies = (
+				5BE959F82B21F2BC002DFC1A /* SwiftUIX */,
+			);
 			productName = amiibonintendoproject;
 			productReference = 5B94999E2B175A5F008031F2 /* amiibonintendoproject.app */;
 			productType = "com.apple.product-type.application";
@@ -277,6 +282,9 @@
 				Base,
 			);
 			mainGroup = 5B9499952B175A5E008031F2;
+			packageReferences = (
+				5BE959F72B21F2BC002DFC1A /* XCRemoteSwiftPackageReference "SwiftUIX" */,
+			);
 			productRefGroup = 5B94999F2B175A5F008031F2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -653,6 +661,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5BE959F72B21F2BC002DFC1A /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5BE959F82B21F2BC002DFC1A /* SwiftUIX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5BE959F72B21F2BC002DFC1A /* XCRemoteSwiftPackageReference "SwiftUIX" */;
+			productName = SwiftUIX;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5B9499962B175A5E008031F2 /* Project object */;
 }

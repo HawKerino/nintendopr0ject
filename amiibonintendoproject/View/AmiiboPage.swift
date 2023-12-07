@@ -8,42 +8,52 @@
 import Foundation
 import SwiftUI
 
-struct SearchBarView: View {
+struct FullScreenSearchView: View {
     @Binding var searchText: String
-    var onSearchAction: () -> Void
-    
+    @Binding var isSearching: Bool
+
     var body: some View {
-        HStack {
-            ZStack(alignment: .leading) {
-                Image(systemName: "magnifyingglass")
-                    .foregroundColor(.gray)
-                    .padding(.leading, 10)
-                
-                TextField("Search", text: $searchText, onCommit: {
-                    onSearchAction()
-                })
-                .padding(10)
-                .background(Color(.systemGray6))
-                .cornerRadius(8)
-                .padding(.leading, 40)
-            }
-            .padding(.trailing, 8)
-            
-            Button(action: {
-                searchText=""
-                onSearchAction()
-            }) {
-                Text("Cancel")
-                    .foregroundColor(.blue)
-                    .padding(.trailing, 10)
+        VStack {
+            TextField("Search", text: $searchText, onCommit: {
+                // Perform search here
+                self.isSearching = false
+            })
+            .padding(10)
+            .background(Color(.systemGray6))
+            .cornerRadius(8)
+            .padding(40)
+
+            HStack {
+                Button(action: {
+                    // Perform search here
+                    self.isSearching = false
+                }) {
+                    Text("Search")
+                        .foregroundColor(.blue)
+                        .padding(10)
+                }
+
+                Spacer()
+
+                Button(action: {
+                    // Clear search text, cancel search, and dismiss the view
+                    self.searchText = ""
+                    self.isSearching = false
+                }) {
+                    Text("Cancel")
+                        .foregroundColor(.blue)
+                        .padding(10)
+                }
             }
         }
+        .padding()
     }
 }
 
 struct AmiiboPage: View {
     @ObservedObject var amiiboListVM = AmiiboListVM()
     @State private var searchText = ""
+    @State private var isSearching = false
 
     init() {
         self.amiiboListVM.fetchAmiibo()
@@ -52,45 +62,46 @@ struct AmiiboPage: View {
 
     var body: some View {
         NavigationView {
-            ZStack{
-                
+            ZStack {
                 Image("wallpaper")
                     .resizable()
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
-                
+
                 VStack {
-                    SearchBarView(searchText: $searchText) {
-                        self.amiiboListVM.fetchAmiibo()
-                        self.amiiboListVM.saveSearchText(self.searchText)
+                    Button(action: {
+                        // Set isSearching to true when the "Search" button is tapped
+                        self.isSearching = true
+                    }) {
+                        Text("Search")
+                            .foregroundColor(.blue)
+                            .padding(10)
                     }
-                    
+
                     List {
                         ForEach(self.filteredAmiibos(), id: \.id) { amiiboview in
                             AmiiboPageRow(amiiboview: amiiboview).listRowBackground(Color.black.opacity(0.5))
                         }
-                    }.scrollContentBackground(.hidden)
+                    }
+                    .scrollContentBackground(.hidden)
                     .background(Color.clear)
                     .alert(isPresented: self.$amiiboListVM.showAlert) {
                         self.amiiboListVM.alert
                     }
-                    .navigationBarTitle("AmiiboPage", displayMode: .inline).foregroundColor(Color.white)
-                    .navigationBarItems(leading:
-                                            Button(action: {
-                        self.amiiboListVM.fetchAmiibo()
-                    }) {
-                        Image(systemName: "arrow.clockwise.icloud")
-                    },
-                                        trailing:
-                                            HStack {
-                        NavigationLink(destination: PreviousSearchesView(amiiboListVM: amiiboListVM)) {
-                            Image(systemName: "clock")
+                    .navigationBarTitle("AmiiboPage", displayMode: .inline)
+                    .foregroundColor(Color.white)
+                    .navigationBarItems(
+                        trailing: HStack {
+                            NavigationLink(destination: PreviousSearchesView(amiiboListVM: amiiboListVM)) {
+                                Image(systemName: "clock")
+                            }
                         }
-                    }
                     )
                 }
                 .padding()
-                
+            }
+            .sheet(isPresented: $isSearching) {
+                FullScreenSearchView(searchText: $searchText, isSearching: $isSearching)
             }
         }
     }
