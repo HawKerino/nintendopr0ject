@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B0F05432B22809700C25E5E /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0F05422B22809700C25E5E /* SplashScreenView.swift */; };
 		5B5EC9A22B1C97DD0073A9D8 /* PreviousSearchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5EC9A12B1C97DD0073A9D8 /* PreviousSearchesView.swift */; };
 		5B5EC9A62B1CABBE0073A9D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B5EC9A52B1CABBE0073A9D8 /* Main.storyboard */; };
 		5B9499A22B175A5F008031F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9499A12B175A5F008031F2 /* AppDelegate.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B0F05422B22809700C25E5E /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		5B5EC9A12B1C97DD0073A9D8 /* PreviousSearchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousSearchesView.swift; sourceTree = "<group>"; };
 		5B5EC9A52B1CABBE0073A9D8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5B94999E2B175A5F008031F2 /* amiibonintendoproject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = amiibonintendoproject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,6 +171,7 @@
 				5B9499E92B1764E4008031F2 /* AmiiboPage.swift */,
 				5B9499EB2B17652D008031F2 /* AmiiboPageRow.swift */,
 				5B5EC9A12B1C97DD0073A9D8 /* PreviousSearchesView.swift */,
+				5B0F05422B22809700C25E5E /* SplashScreenView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 			files = (
 				5B9499E42B1761BB008031F2 /* API.swift in Sources */,
 				5B9499DE2B175B04008031F2 /* Amiibo.swift in Sources */,
+				5B0F05432B22809700C25E5E /* SplashScreenView.swift in Sources */,
 				5B9499E82B176249008031F2 /* AmiiboListVM.swift in Sources */,
 				5B9499EC2B17652D008031F2 /* AmiiboPageRow.swift in Sources */,
 				5B9499DC2B175AFA008031F2 /* Detail.swift in Sources */,
@@ -496,12 +500,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JADVLP5NF5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = amiibonintendoproject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -523,12 +529,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JADVLP5NF5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = amiibonintendoproject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

@@ -13,6 +13,11 @@ final class AmiiboListVM: ObservableObject {
     @Published var showAlert: Bool = false
     @Published var previousSearches: [String] = []
 
+    init() {
+        self.amiibos = [] // Initialize the amiibos array
+        self.previousSearches = loadPreviousSearches()
+    }
+
     func fetchAmiibo() {
         let apiClient = API()
         apiClient.get { result in
