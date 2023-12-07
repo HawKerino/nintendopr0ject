@@ -40,15 +40,18 @@ final class AmiiboListVM: ObservableObject {
         UserDefaults.standard.set(searchText, forKey: "SearchText")
         if !searchText.isEmpty {
             previousSearches.insert(searchText, at: 0)
-            
             UserDefaults.standard.set(previousSearches, forKey: "PreviousSearches")
         }
     }
 
     func loadSearchText() -> String {
-        if let storedSearches = UserDefaults.standard.array(forKey: "PreviousSearches") as? [String] {
-            previousSearches = storedSearches
-        }
         return UserDefaults.standard.string(forKey: "SearchText") ?? ""
+    }
+
+    func loadPreviousSearches() -> [String] {
+        if let storedSearches = UserDefaults.standard.array(forKey: "PreviousSearches") as? [String] {
+            return storedSearches
+        }
+        return []
     }
 }

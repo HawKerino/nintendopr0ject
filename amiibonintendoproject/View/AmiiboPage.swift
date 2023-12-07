@@ -11,12 +11,14 @@ import SwiftUI
 struct FullScreenSearchView: View {
     @Binding var searchText: String
     @Binding var isSearching: Bool
+    @ObservedObject var amiiboListVM: AmiiboListVM
 
     var body: some View {
         VStack {
             TextField("Search", text: $searchText, onCommit: {
                 // Perform search here
                 self.isSearching = false
+                self.amiiboListVM.saveSearchText(self.searchText) // Save the search text
             })
             .padding(10)
             .background(Color(.systemGray6))
@@ -27,6 +29,7 @@ struct FullScreenSearchView: View {
                 Button(action: {
                     // Perform search here
                     self.isSearching = false
+                    self.amiiboListVM.saveSearchText(self.searchText) // Save the search text
                 }) {
                     Text("Search")
                         .foregroundColor(.blue)
@@ -101,7 +104,7 @@ struct AmiiboPage: View {
                 .padding()
             }
             .sheet(isPresented: $isSearching) {
-                FullScreenSearchView(searchText: $searchText, isSearching: $isSearching)
+                FullScreenSearchView(searchText: $searchText, isSearching: $isSearching, amiiboListVM: amiiboListVM)
             }
         }
     }
